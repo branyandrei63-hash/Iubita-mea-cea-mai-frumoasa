@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Invitation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6f0;
+      margin-top: 100px;
+    }
+    h1 {
+      color: #ff3366;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    #yes {
+      background-color: #ff6699;
+      color: white;
+    }
+    #no {
+      background-color: #999999;
+      color: white;
+      position: relative;
+    }
+    #message {
+      font-size: 24px;
+      color: #ff3366;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine, Adnana? 💖</h1>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+  <div id="message"></div>
+
+  <script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+    const message = document.getElementById("message");
+
+    // Butonul NO „fuge” când încerci să-l apeși
+    noButton.addEventListener("mousedown", function() {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.position = "absolute";
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+    });
+
+    // Butonul YES afișează mesajul de iubire
+    yesButton.addEventListener("click", function() {
+      message.textContent = "Te iubesc cel mai mult 💖";
+    });
+  </script>
+</body>
+</html>
